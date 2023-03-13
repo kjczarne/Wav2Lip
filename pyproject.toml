@@ -14,6 +14,7 @@ opencv-python = "^4.7.0.72"
 llvmlite = "^0.39.1"
 librosa = ">=0.10.0,<0.11.0"
 tqdm = "^4.65.0"
+scikit-video = "^1.1.11"
 
 
 [build-system]
