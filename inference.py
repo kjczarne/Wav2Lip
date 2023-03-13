@@ -4,8 +4,9 @@ import scipy, cv2, os, sys, argparse, audio
 import json, subprocess, random, string
 from tqdm import tqdm
 from glob import glob
-import torch, face_detection
-from models import Wav2Lip
+import torch
+from wav2lip import face_detection
+from wav2lip.models import Wav2Lip
 import platform
 
 parser = argparse.ArgumentParser(description='Inference code to lip-sync videos in the wild using Wav2Lip models')

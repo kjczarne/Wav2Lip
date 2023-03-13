@@ -7,7 +7,13 @@ license = "non-commercial use"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10,<3.12"
+numpy = "<1.24"
+scipy = "^1.10.1"
+opencv-python = "^4.7.0.72"
+llvmlite = "^0.39.1"
+librosa = ">=0.10.0,<0.11.0"
+tqdm = "^4.65.0"
 
 
 [build-system]

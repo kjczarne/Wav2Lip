@@ -1,5 +1,21 @@
 # **Wav2Lip**: *Accurately Lip-syncing Videos In The Wild*
 
+## Fork Notes
+
+### Installation
+
+```bash
+poetry install
+```
+
+Then install the PyTorch version **applicable to your system** using `pip`, for example:
+
+```bash
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu118
+```
+
+## Original Readme
+
 For commercial requests, please contact us at radrabha.m@research.iiit.ac.in or prajwal.k@research.iiit.ac.in. We have an HD model ready that can be used commercially.
 
 This code is part of the paper: _A Lip Sync Expert Is All You Need for Speech to Lip Generation In the Wild_ published at ACM Multimedia 2020. 
