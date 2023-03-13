@@ -7,6 +7,8 @@ from glob import glob
 import torch
 from wav2lip import face_detection
 from wav2lip.models import Wav2Lip
+from skvideo.io import ffprobe
+from fractions import Fraction
 import platform
 
 parser = argparse.ArgumentParser(description='Inference code to lip-sync videos in the wild using Wav2Lip models')
@@ -188,8 +190,19 @@ def main():
 		fps = args.fps
 
 	else:
+		video_metadata = ffprobe(str(args.face)).get("video")
+		fps = round(
+      		float(
+            	Fraction(
+                 	video_metadata.get("@r_frame_rate")
+				)
+            )
+        )
+		num_frames = int(video_metadata.get("@nb_frames"))
 		video_stream = cv2.VideoCapture(args.face)
-		fps = video_stream.get(cv2.CAP_PROP_FPS)
+		video_stream.set(cv2.CAP_PROP_FPS, fps)
+		video_stream.set(cv2.CAP_PROP_FRAME_COUNT, num_frames)
+		print(f"FPS is {fps}")
 
 		print('Reading video frames...')
 
