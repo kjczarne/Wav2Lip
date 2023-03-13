@@ -198,10 +198,8 @@ def main():
 				)
             )
         )
-		num_frames = int(video_metadata.get("@nb_frames"))
 		video_stream = cv2.VideoCapture(args.face)
 		video_stream.set(cv2.CAP_PROP_FPS, fps)
-		video_stream.set(cv2.CAP_PROP_FRAME_COUNT, num_frames)
 		print(f"FPS is {fps}")
 
 		print('Reading video frames...')
